@@ -4,11 +4,16 @@
 
 ## 待发布
 
-- 项目许可证由 PolyForm Noncommercial 1.0.0 迁移为 `AGPL-3.0-only`，正式允许商业使用，同时要求保留署名、公开分发版本源码，并覆盖修改后的网络服务。
-- 新增 `NOTICE`、`CITATION.cff` 和中文许可证说明。
 - macOS：等待固定 Developer ID 签名、原位更新和权限继承完成真实设备验收。
 - Windows：等待 `windows` 分支在真实 Windows 环境重新构建并完成通信、Goal 和图片链路验收。
 - iOS：仍在开发中，尚无 App Store、TestFlight 或 IPA 发布。
+
+## 公共开源基线 — 2026-07-27
+
+- 项目许可证由 PolyForm Noncommercial 1.0.0 迁移为 `AGPL-3.0-only`，正式允许商业使用，同时要求保留署名、公开分发版本源码，并覆盖修改后的网络服务。
+- 新增 `NOTICE`、`CITATION.cff`、中文许可证说明和统一发布规范。
+- `main` 与 `windows` 分支的许可证、版权与引用信息保持一致。
+- 已发布的版本标签、安装包和校验值保持冻结；后续修复或功能变化必须使用新的版本号和 Release，不能覆盖已有安装包。
 
 ## Android 0.11.22 — 2026-07-26
 
@@ -25,7 +30,8 @@
 - Android Release lint 与 Release 构建通过。
 - APK、桌面内置更新包和更新清单的文件大小与 SHA-256 完全一致。
 - 公开源码与 APK 已执行隐私信息和常见密钥扫描。
-- 真实手机的自动更新与图片链路仍待最终验收，因此首发标记为 Pre-release。
+- 真实 Android 手机已通过客户端握手报告 `0.11.22`（versionCode 50），保留原配对并成功恢复局域网连接。
+- 证据图片完整链路仍待本版本最终验收，因此继续标记为 Pre-release，不冒充 Stable。
 
 ### 文件校验
 
