@@ -14,6 +14,8 @@ Codex Monitor 是一套跨设备的 Codex 会话监控与控制工具。电脑�
 
 详细状态见 [PLATFORM_STATUS.md](PLATFORM_STATUS.md)。
 
+项目更新记录见 [CHANGELOG.md](CHANGELOG.md)，贡献方式见 [CONTRIBUTING.md](CONTRIBUTING.md)，正式发布门禁见 [docs/RELEASE-PROCESS.md](docs/RELEASE-PROCESS.md)。
+
 ## 状态灯
 
 - 绿色：正在运行。
