@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Codex Monitor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Codex Monitor</h1>
+        <p>选择要发送到手机的 Codex 会话</p>
+      </div>
+      <button id="refresh" class="icon-button" title="刷新会话" aria-label="刷新会话">↻</button>
+    </header>
+    <main>
+      <section class="session-panel">
+        <div class="section-title">
+          <h2>本机会话</h2>
+          <span id="selection-count">0 个已选择</span>
+        </div>
+        <div id="session-list" class="session-list"></div>
+      </section>
+      <aside class="pair-panel">
+        <div class="pair-heading">
+          <span class="online-dot"></span>
+          <div>
+            <h2>手机配对</h2>
+            <p id="client-count">等待连接</p>
+          </div>
+        </div>
+        <label class="machine-name-label" for="machine-name">设备名称</label>
+        <div class="machine-name-row">
+          <input id="machine-name" maxlength="40" />
+          <button id="save-name">保存</button>
+        </div>
+        <label class="auto-start-row">
+          <input id="auto-start" type="checkbox" />
+          <span>开机自动启动</span>
+        </label>
+        <section id="native-channel" class="native-channel" data-state="checking">
+          <div class="native-channel-heading">
+            <strong>Codex 原生信道</strong>
+            <span id="native-channel-state">检查中</span>
+          </div>
+          <p id="native-channel-message">正在检查本机 9229 端口</p>
+          <button id="native-channel-repair" type="button">检查并修复</button>
+        </section>
+        <section id="relay-settings" class="relay-settings" data-state="off">
+          <label class="relay-enabled-row">
+            <input id="relay-enabled" type="checkbox" />
+            <span>启用共享公网中继</span>
+          </label>
+          <span id="relay-endpoint" class="relay-endpoint">wss://relay.example.com/codex-monitor</span>
+          <p id="relay-status" class="relay-status">远程中继已关闭</p>
+        </section>
+        <details id="client-release" hidden>
+          <summary id="client-version">手机版本</summary>
+          <div id="client-release-notes"></div>
+        </details>
+        <section id="repository-inbox" class="repository-inbox" data-state="loading">
+          <div class="repository-inbox-heading">
+            <h3>仓库任务收件箱</h3>
+            <div class="repository-inbox-actions">
+              <button id="repository-inbox-refresh" class="small-icon-button" type="button" title="刷新仓库收件箱" aria-label="刷新仓库收件箱">↻</button>
+              <button id="repository-inbox-clear-token" class="small-icon-button" type="button" title="移除 GitHub 凭据" aria-label="移除 GitHub 凭据" hidden>×</button>
+            </div>
+          </div>
+          <p id="repository-inbox-summary" class="repository-inbox-summary">正在读取 main</p>
+          <div class="repository-documents">
+            <div class="repository-document-row">
+              <span class="repository-document-name">公开发布状态</span>
+              <span id="repository-backlog-new" class="repository-new" hidden>NEW</span>
+              <code id="repository-backlog-sha" class="repository-sha">-------</code>
+            </div>
+            <div class="repository-document-row">
+              <span class="repository-document-name">共享协议</span>
+              <span id="repository-windows-task-new" class="repository-new" hidden>NEW</span>
+              <code id="repository-windows-task-sha" class="repository-sha">-------</code>
+            </div>
+          </div>
+          <p id="repository-inbox-persistence" class="repository-inbox-persistence"></p>
+          <p id="repository-inbox-error" class="repository-inbox-error" hidden></p>
+          <form id="repository-token-form" class="repository-token-form" hidden>
+            <input id="repository-token" type="password" autocomplete="off" maxlength="512" placeholder="GitHub 只读凭据" aria-label="GitHub 只读凭据" />
+            <button type="submit">连接 GitHub</button>
+          </form>
+        </section>
+        <div class="qr-shell"><img id="qr" alt="手机配对二维码" /></div>
+        <p class="pair-copy">在 Android App 中点击扫码，连接后会自动同步所选会话。</p>
+        <details>
+          <summary>手动配对信息</summary>
+          <code id="pair-value"></code>
+        </details>
+      </aside>
+    </main>
+    <script src="native-channel.js"></script>
+    <script src="relay-settings.js"></script>
+    <script src="repository-inbox.js"></script>
+    <script src="renderer.js"></script>
+  </body>
+</html>

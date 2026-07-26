@@ -1,0 +1,64 @@
+{
+  "name": "codex-monitor-desktop",
+  "version": "0.8.10",
+  "description": "Codex session monitor desktop companion",
+  "license": "SEE LICENSE IN ../LICENSE",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test",
+    "dist": "electron-builder --mac dmg zip --win nsis portable"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "electron": "^37.2.4",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.codexmonitor.desktop",
+    "productName": "Codex Monitor",
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "extraResources": [
+        {
+          "from": "resources/Codex-Monitor-Android.apk",
+          "to": "Codex-Monitor-Android.apk"
+        },
+        {
+          "from": "resources/android-latest.json",
+          "to": "android-latest.json"
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "extraResources": [
+        {
+          "from": "../release/windows-update-ed25519-public.pem",
+          "to": "windows-update-ed25519-public.pem"
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": false
+    },
+    "portable": {
+      "unpackDirName": "codex-monitor-desktop-portable"
+    }
+  }
+}
