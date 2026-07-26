@@ -1,0 +1,62 @@
+{
+  "name": "codex-monitor-desktop",
+  "version": "0.11.15",
+  "description": "Codex session monitor desktop companion",
+  "license": "SEE LICENSE IN ../LICENSE",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test",
+    "test:update-feed": "python3 -m unittest scripts/test_android_update_feed.py",
+    "verify:mac-update": "node scripts/verify-mac-update-identity.js",
+    "dist": "electron-builder --mac dmg zip --win nsis portable"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "electron": "^37.2.4",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.codexmonitor.desktop",
+    "productName": "Codex Monitor",
+    "afterPack": "scripts/after-pack.js",
+    "files": [
+      "src/**/*",
+      "scripts/mac-update-helper.js",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "extendInfo": {
+        "NSLocalNetworkUsageDescription": "允许手机在局域网中连接此 Mac 并监控 Codex 会话。",
+        "NSDocumentsFolderUsageDescription": "允许读取 Codex 在文稿目录中生成并明确附带给手机的证据图片。",
+        "NSDesktopFolderUsageDescription": "允许读取 Codex 在桌面目录中生成并明确附带给手机的证据图片。",
+        "NSDownloadsFolderUsageDescription": "允许读取 Codex 在下载目录中生成并明确附带给手机的证据图片。",
+        "NSRemovableVolumesUsageDescription": "允许读取 Codex 在外置磁盘中生成并明确附带给手机的证据图片。"
+      },
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "extraResources": [
+        {
+          "from": "resources/Codex-Monitor-Android.apk",
+          "to": "Codex-Monitor-Android.apk"
+        },
+        {
+          "from": "resources/android-latest.json",
+          "to": "android-latest.json"
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    }
+  }
+}

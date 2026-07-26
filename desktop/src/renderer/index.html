@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Codex Monitor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <div class="title-row">
+          <h1>Codex Monitor</h1>
+          <span id="controller-badge" class="controller-badge" hidden>主控 Mac</span>
+        </div>
+        <p>选择要发送到手机的 Codex 会话</p>
+      </div>
+      <button id="refresh" class="icon-button" title="刷新会话" aria-label="刷新会话">↻</button>
+    </header>
+    <main>
+      <section class="session-panel">
+        <div class="section-title">
+          <h2>本机会话</h2>
+          <span id="selection-count">0 个已选择</span>
+        </div>
+        <div id="session-list" class="session-list"></div>
+      </section>
+      <aside class="pair-panel">
+        <div class="pair-heading">
+          <span class="online-dot"></span>
+          <div>
+            <h2>手机配对</h2>
+            <p id="client-count">等待连接</p>
+          </div>
+        </div>
+        <label class="machine-name-label" for="machine-name">设备名称</label>
+        <div class="machine-name-row">
+          <input id="machine-name" maxlength="40" />
+          <button id="save-name">保存</button>
+        </div>
+        <label class="auto-start-row">
+          <input id="auto-start" type="checkbox" />
+          <span>开机自动启动</span>
+        </label>
+        <div class="native-channel-card">
+          <div class="native-channel-heading">
+            <strong>手机指令通道</strong>
+            <span id="native-channel-state">正在检查</span>
+          </div>
+          <p id="native-channel-message">正在检查 Codex 原生输入通道</p>
+          <button id="repair-native-channel" hidden>修复输入通道</button>
+          <small>修复只会正常退出并启动一次 Codex，不会强制结束或循环重启。</small>
+        </div>
+        <div class="relay-settings">
+          <label class="auto-start-row">
+            <input id="relay-enabled" type="checkbox" />
+            <span>远程中继</span>
+          </label>
+          <div class="relay-address-row">
+            <input id="relay-url" placeholder="wss://relay.example.com" />
+            <button id="save-relay">应用</button>
+          </div>
+          <p id="relay-status" class="relay-status">远程中继已关闭</p>
+        </div>
+        <details id="client-release" hidden>
+          <summary id="client-version">手机版本</summary>
+          <div id="client-release-notes"></div>
+        </details>
+        <div class="qr-shell"><img id="qr" alt="手机配对二维码" /></div>
+        <p class="pair-copy">在 Android 或 iPhone App 中扫码，连接后会自动同步所选会话。</p>
+        <details>
+          <summary>手动配对信息</summary>
+          <code id="pair-value"></code>
+        </details>
+      </aside>
+    </main>
+    <section id="controller-panel" class="controller-panel" hidden>
+      <div class="controller-heading">
+        <div>
+          <h2>受控电脑</h2>
+          <p>导入另一台电脑的配对码，直接查看并引导其 Codex 会话。</p>
+        </div>
+        <span id="controller-count">0 台设备</span>
+      </div>
+      <div class="controller-add">
+        <textarea id="controller-code" rows="2" placeholder="粘贴 Windows 电脑端“手动配对信息”中的完整 codex-monitor:// 配对码"></textarea>
+        <button id="controller-add-button">连接设备</button>
+      </div>
+      <p id="controller-error" class="controller-error" hidden></p>
+      <div id="controller-list" class="controller-list"></div>
+    </section>
+    <script src="renderer.js"></script>
+  </body>
+</html>

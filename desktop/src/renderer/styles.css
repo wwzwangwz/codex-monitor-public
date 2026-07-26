@@ -1,0 +1,109 @@
+:root {
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  color: #18201d;
+  background: #f3f5f4;
+  letter-spacing: 0;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 820px; }
+header {
+  height: 104px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d9dfdc;
+  background: #fff;
+}
+h1, h2, p { margin: 0; }
+h1 { font-size: 24px; line-height: 1.2; font-weight: 720; }
+.title-row { display: flex; align-items: center; gap: 10px; }
+.controller-badge { padding: 4px 7px; border-radius: 5px; background: #18201d; color: #fff; font-size: 11px; font-weight: 700; }
+header p { margin-top: 7px; color: #68726e; font-size: 14px; }
+.icon-button {
+  width: 40px; height: 40px; border: 1px solid #ced6d2; background: #fff;
+  border-radius: 7px; font-size: 24px; cursor: pointer; color: #33413c;
+}
+.icon-button:hover { background: #edf1ef; }
+main { display: grid; grid-template-columns: minmax(480px, 1fr) 340px; min-height: calc(100vh - 104px); }
+.session-panel { padding: 28px 32px; overflow: hidden; }
+.section-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.section-title h2, .pair-heading h2 { font-size: 16px; font-weight: 700; }
+.section-title span { font-size: 13px; color: #68726e; }
+.session-list { display: flex; flex-direction: column; gap: 8px; max-height: calc(100vh - 186px); overflow: auto; padding-right: 4px; }
+.session-row {
+  display: grid; grid-template-columns: 24px 12px minmax(0, 1fr) auto; gap: 12px; align-items: center;
+  background: #fff; border: 1px solid #dce2df; border-radius: 7px; padding: 13px 15px;
+}
+.session-row:hover { border-color: #aebbb5; }
+.session-row input { width: 17px; height: 17px; accent-color: #1d7654; cursor: pointer; }
+.status-dot { width: 10px; height: 10px; border-radius: 50%; box-shadow: 0 0 0 3px currentColor inset; }
+.running { color: #24a065; background: #24a065; }
+.completed { color: #3184d8; background: #3184d8; }
+.blocked { color: #d84a4a; background: #d84a4a; }
+.unknown { color: #232725; background: #232725; }
+.session-copy { min-width: 0; }
+.session-name { font-size: 14px; font-weight: 650; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.session-message { font-size: 12px; color: #73807a; margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.status-label { font-size: 12px; color: #65716c; }
+.pair-panel { border-left: 1px solid #d9dfdc; background: #fff; padding: 30px; }
+.pair-heading { display: flex; gap: 11px; align-items: center; margin-bottom: 18px; }
+.pair-heading p { font-size: 12px; color: #6b7772; margin-top: 4px; }
+.online-dot { width: 11px; height: 11px; border-radius: 50%; background: #24a065; box-shadow: 0 0 0 4px #dff4e9; }
+.machine-name-label { display: block; color: #68726e; font-size: 12px; margin-bottom: 6px; }
+.machine-name-row { display: grid; grid-template-columns: 1fr auto; gap: 7px; margin-bottom: 10px; }
+.machine-name-row input { min-width: 0; height: 36px; border: 1px solid #ced6d2; border-radius: 6px; padding: 0 10px; font: inherit; }
+.machine-name-row button { border: 0; border-radius: 6px; padding: 0 13px; color: #fff; background: #18201d; cursor: pointer; }
+.auto-start-row { display: flex; align-items: center; gap: 7px; color: #52605a; font-size: 12px; margin-bottom: 14px; }
+.auto-start-row input { width: 15px; height: 15px; accent-color: #1d7654; }
+.native-channel-card { border: 1px solid #dde3e0; border-radius: 7px; padding: 12px; margin: 4px 0 16px; background: #f7f9f8; }
+.native-channel-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.native-channel-heading strong { font-size: 12px; }
+.native-channel-heading span { border-radius: 999px; padding: 3px 7px; background: #f4dddd; color: #a63838; font-size: 10px; font-weight: 700; }
+.native-channel-heading span.ready { background: #dff4e9; color: #217a52; }
+.native-channel-heading span.repairing { background: #fff0cf; color: #8b641d; }
+.native-channel-card p { margin-top: 7px; color: #5e6b65; font-size: 11px; line-height: 1.5; }
+.native-channel-card button { width: 100%; height: 32px; margin-top: 9px; border: 0; border-radius: 6px; background: #18201d; color: #fff; font: inherit; font-size: 11px; font-weight: 650; cursor: pointer; }
+.native-channel-card button:disabled { opacity: .55; cursor: default; }
+.native-channel-card small { display: block; margin-top: 8px; color: #7b8581; font-size: 10px; line-height: 1.45; }
+.qr-shell { width: 260px; height: 260px; display: grid; place-items: center; border: 1px solid #d9dfdc; border-radius: 7px; }
+.qr-shell img { width: 234px; height: 234px; }
+.pair-copy { color: #5f6b66; font-size: 13px; line-height: 1.6; margin-top: 18px; }
+.relay-settings { border-top: 1px solid #e5e9e7; margin: 16px 0; padding-top: 14px; }
+.relay-address-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; margin-top: 8px; }
+.relay-address-row input { min-width: 0; }
+.relay-status { color: #7a4545; font-size: 12px; margin: 7px 0 0; }
+.relay-status.connected { color: #217a52; }
+details { margin-top: 18px; font-size: 12px; color: #52605a; }
+summary { cursor: pointer; }
+code { display: block; overflow-wrap: anywhere; margin-top: 10px; padding: 10px; background: #f3f5f4; border-radius: 5px; max-height: 100px; overflow: auto; }
+.empty { color: #6e7974; padding: 40px 0; text-align: center; }
+.controller-panel { padding: 26px 32px 34px; border-top: 1px solid #d9dfdc; background: #fff; }
+.controller-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
+.controller-heading h2 { font-size: 17px; }
+.controller-heading p { margin-top: 6px; color: #68726e; font-size: 13px; }
+.controller-heading > span { color: #68726e; font-size: 12px; }
+.controller-add { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 9px; margin-top: 16px; }
+.controller-add textarea { resize: vertical; min-height: 58px; border: 1px solid #ced6d2; border-radius: 6px; padding: 10px; font: inherit; font-size: 12px; }
+.controller-add button, .remote-guidance button { border: 0; border-radius: 6px; padding: 0 15px; background: #18201d; color: #fff; font-weight: 650; cursor: pointer; }
+.controller-error { margin-top: 8px; color: #b93636; font-size: 12px; }
+.controller-list { display: grid; gap: 10px; margin-top: 16px; }
+.controller-empty, .controlled-empty { padding: 20px 0; color: #77817d; font-size: 13px; }
+.controlled-device { border: 1px solid #dce2df; border-radius: 7px; overflow: hidden; }
+.controlled-device-heading { display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; align-items: center; gap: 11px; padding: 12px 14px; background: #f7f9f8; }
+.controlled-device-heading h3 { margin: 0; font-size: 14px; }
+.controlled-device-heading p { margin-top: 3px; color: #74807b; font-size: 11px; }
+.remove-device { border: 0; background: transparent; color: #b33f3f; font-size: 12px; cursor: pointer; }
+.controlled-session { display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; gap: 10px; align-items: start; padding: 13px 14px; border-top: 1px solid #e4e8e6; }
+.controlled-session-copy { display: flex; min-width: 0; flex-direction: column; }
+.controlled-session-copy strong { font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.controlled-session-copy span { margin-top: 4px; color: #73807a; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.remote-guidance { grid-column: 2 / 4; display: grid; grid-template-columns: minmax(0, 1fr) 68px 68px; gap: 7px; align-items: center; }
+.remote-guidance input { min-width: 0; height: 34px; border: 1px solid #ced6d2; border-radius: 6px; padding: 0 9px; font: inherit; font-size: 12px; }
+.remote-guidance button { height: 34px; padding: 0 8px; font-size: 11px; }
+.remote-guidance button:disabled { opacity: .45; cursor: default; }
+.remote-result { grid-column: 1 / -1; min-height: 14px; color: #5f6b66; font-size: 11px; }
+.remote-goal-status { margin-top: 3px; color: #8b5a21; font-size: 11px; }
+.remote-goal-actions { grid-column: 2 / 4; display: flex; gap: 7px; margin-top: 2px; }
+.remote-goal-actions button { height: 30px; border: 1px solid #cfd8d3; border-radius: 5px; padding: 0 10px; background: #fff; color: #25312c; font: inherit; font-size: 11px; cursor: pointer; }
+.remote-goal-actions button:disabled { opacity: .45; cursor: default; }
