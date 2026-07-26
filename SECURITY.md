@@ -9,4 +9,4 @@
 
 发现安全问题时，请先制作最小复现并脱敏。部署 Relay 时，FCM/APNs 凭据和设备 token 只能从运行环境注入，不能写入仓库或客户端。
 
-Required Notice: Copyright © 2026 wwzwangwz. Commercial use and resale require separate prior written permission.
+Copyright © 2026 wwzwangwz. This project is licensed under AGPL-3.0-only; redistributions and modified versions must also preserve the repository `NOTICE`.

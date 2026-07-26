@@ -1,6 +1,6 @@
 # 参与开发
 
-感谢关注 Codex Monitor。提交代码前请先阅读 [LICENSE](LICENSE)；所有贡献均按仓库现有的 PolyForm Noncommercial License 1.0.0 提交。
+感谢关注 Codex Monitor。提交代码前请先阅读 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)；所有贡献均按 `AGPL-3.0-only` 提交。提交者应确认自己有权贡献相关代码和素材，并同意保留项目的合理署名与来源声明。
 
 ## 分支
 

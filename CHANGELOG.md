@@ -4,6 +4,8 @@
 
 ## 待发布
 
+- 项目许可证由 PolyForm Noncommercial 1.0.0 迁移为 `AGPL-3.0-only`，正式允许商业使用，同时要求保留署名、公开分发版本源码，并覆盖修改后的网络服务。
+- 新增 `NOTICE`、`CITATION.cff` 和中文许可证说明。
 - macOS：等待固定 Developer ID 签名、原位更新和权限继承完成真实设备验收。
 - Windows：等待 `windows` 分支在真实 Windows 环境重新构建并完成通信、Goal 和图片链路验收。
 - iOS：仍在开发中，尚无 App Store、TestFlight 或 IPA 发布。

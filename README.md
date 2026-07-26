@@ -1,5 +1,8 @@
 # Codex Monitor
 
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE)
+[![GitHub Release](https://img.shields.io/github/v/release/wwzwangwz/codex-monitor-public?include_prereleases)](https://github.com/wwzwangwz/codex-monitor-public/releases)
+
 Codex Monitor 是一套跨设备的 Codex 会话监控与控制工具。电脑端选择需要监控的 Codex 会话，手机扫码配对后可查看每台设备、每个会话的状态灯、最近工作内容、Goal 状态和证据图片，并通过原生 Steer/Queue 通道发送文字或图片引导。
 
 ## 平台
@@ -79,15 +82,16 @@ npm start
 
 ## 许可证与版权
 
-Copyright © 2026 wwzwangwz. All rights reserved.
+Copyright © 2026 Wenzhen Wang（GitHub：wwzwangwz）。
 
-本项目采用 [PolyForm Noncommercial License 1.0.0](LICENSE)，属于**源码可见（source-available）**项目，不是 OSI 定义的开源软件。
+本项目采用 [GNU Affero General Public License v3.0 only](LICENSE)，SPDX 标识为 `AGPL-3.0-only`，属于 OSI 正式认可的开源软件。中文说明见 [docs/LICENSE-zh-CN.md](docs/LICENSE-zh-CN.md)，署名与来源要求见 [NOTICE](NOTICE)，标准引用信息见 [CITATION.cff](CITATION.cff)。
 
-允许个人学习、研究、实验、测试以及其他非商业用途。未经版权所有者事先书面许可，禁止：
+允许个人、学校、研究机构和公司使用，也允许商业使用、收费部署、销售副本和提供收费服务，但必须遵守以下条件：
 
-- 商业使用或商业部署；
-- 销售、转卖、收费分发或付费安装；
-- 作为商业产品、商业服务、商业插件或 SaaS 的组成部分；
-- 以本项目或其衍生版本向他人收取费用。
+- 保留版权声明、完整 AGPL-3.0-only 许可证和 `NOTICE`；
+- 修改版本必须明确标注修改，不得冒充官方版本；
+- 分发安装包或衍生版本时，必须提供对应完整源码；
+- 通过网络提供修改后的 Codex Monitor 或 Relay 时，必须向网络用户提供正在运行版本的对应源码；
+- 在随附文档或“关于/法律声明”中合理显示 Codex Monitor 名称和官方项目链接。
 
-商业授权需另行取得版权所有者的书面许可。第三方依赖仍分别适用其原有许可证。
+合规商用不需要事先付费或逐一联系作者。第三方依赖仍分别适用其原有许可证。
