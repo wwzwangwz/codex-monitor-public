@@ -57,6 +57,12 @@
 
 - APK、`android-latest.json` 和 Release 日志中的大小、版本号与 SHA-256 一致。
 - APK Signature Scheme v2 验证通过，签名证书与现有侧载安装链保持一致。
+- APK 签名证书 SHA-256：
+
+```text
+bbac7231051f899163374abebe19fa4d3a7bc876d40ff7174de13f342dae7c51
+```
+
 - 匿名下载的源码 ZIP 与 TAR.GZ 均包含 `LICENSE`、`NOTICE`、`CITATION.cff`、中文许可证说明和发布规范。
 - 真实 Android 手机已通过客户端握手报告 `0.11.22`（versionCode 50），原配对保留，局域网断网恢复后可重新连接。
 - 证据图片完整链路仍待本版本最终验收，因此 Release 保持 **Pre-release**，不标记为 Stable。
