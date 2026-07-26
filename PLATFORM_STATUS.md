@@ -13,19 +13,21 @@
 
 - 桌面源码版本：0.11.15。
 - 局域网监控、会话选择、原生引导、Goal 控制和证据图片接口已实现。
-- 当前公开发布阻塞：尚无固定 Apple Developer ID 签名身份，因此不能把临时签名构建标记为 Stable。
-- 不提供会改变签名身份、导致权限重新申请的“伪更新”。
+- 0.11.15 已提供 Apple Silicon 与 Intel 的 DMG/ZIP，发布页为 [macos-v0.11.15](https://github.com/wwzwangwz/codex-monitor-public/releases/tag/macos-v0.11.15)。
+- Desktop 111 项测试、Relay 15 项测试、DMG/ZIP 完整性、架构、内部源码一致性和隐私扫描均已通过。
+- 当前没有固定 Apple Developer ID 和 Apple 公证，因此只标记为 Pre-release；不宣称具备自动更新或继承其他签名版本权限的能力。
 
 ## Windows
 
 - 在 `windows` 分支独立维护。
-- 0.8.10 构建候选已生成，但尚未在物理 Windows 设备完成验收。
-- 未完成真实设备验收前只发布 Pre-release，且不会触碰用户正在运行的受保护会话。
+- 0.8.10 已提供 x64 Setup 安装版与 Portable 便携版，发布页为 [windows-v0.8.10](https://github.com/wwzwangwz/codex-monitor-public/releases/tag/windows-v0.8.10)。
+- Setup 与 Portable 内部载荷一致，公开源码边界、构建来源和隐私扫描已核验。
+- 尚无 Windows 代码签名，且未在独立物理 Windows 设备完成完整通信、Goal 与图片链路验收，因此只标记为 Pre-release。
 
 ## iOS
 
 - 客户端源码已建立，仍处于开发阶段。
-- 尚未完成 Apple Developer 身份、APNs 真机、TestFlight 和 App Store 验收。
+- 按当前发布计划暂缓 iOS 安装包，尚未完成 Apple Developer 身份、APNs 真机、TestFlight 和 App Store 验收。
 - 当前不提供 IPA，不宣称可正式使用。
 
 ## 发布规则

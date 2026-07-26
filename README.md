@@ -10,9 +10,9 @@ Codex Monitor 是一套跨设备的 Codex 会话监控与控制工具。电脑�
 | 平台 | 目录/分支 | 当前状态 |
 | --- | --- | --- |
 | Android | `android/` | 可用；通过公开发布门禁的安装包在 GitHub Releases |
-| macOS 桌面端 | `desktop/` | 可用；正式分发仍需固定 Developer ID 签名 |
-| iOS | `ios/` | 开发中，尚未发布 App Store/TestFlight 版本 |
-| Windows 桌面端 | `windows` 分支 | 独立开发；通过 CI 生成预发布安装包 |
+| macOS 桌面端 | `desktop/` | 0.11.15 预发布；提供 Apple Silicon / Intel 一键安装 DMG |
+| iOS | `ios/` | 开发中；按当前计划暂不发布 App Store、TestFlight 或 IPA |
+| Windows 桌面端 | `windows` 分支 | 0.8.10 预发布；提供 x64 安装版和便携版 |
 | 可选远程中继 | `relay/` | 增量功能；局域网连接仍为默认稳定路径 |
 
 详细状态见 [PLATFORM_STATUS.md](PLATFORM_STATUS.md)。
@@ -31,9 +31,18 @@ Codex Monitor 是一套跨设备的 Codex 会话监控与控制工具。电脑�
 
 ## 下载
 
-只从本仓库的 **Releases** 页面下载正式构建。各平台只有通过对应真实设备验收的版本才标记为 Stable；尚未验收的 Windows、iOS 或 Mac 构建会明确标记为 Pre-release 或仅提供源码。
+普通用户请从以下 Release 下载一键安装文件：
 
-Android 支持应用内检查更新和原位安装，签名不变时会保留配对、防休眠和其他设置。macOS 的更新也必须保持同一 bundle ID、安装路径和固定签名身份，避免重复应用与重复权限弹窗。
+| 平台 | 推荐下载 | 发布页 |
+| --- | --- | --- |
+| Android | [Codex-Monitor-Android-v0.11.22.apk](https://github.com/wwzwangwz/codex-monitor-public/releases/download/android-v0.11.22/Codex-Monitor-Android-v0.11.22.apk) | [Android 0.11.22](https://github.com/wwzwangwz/codex-monitor-public/releases/tag/android-v0.11.22) |
+| Apple 芯片 Mac（M1/M2/M3/M4） | [Codex-Monitor-macOS-arm64-v0.11.15.dmg](https://github.com/wwzwangwz/codex-monitor-public/releases/download/macos-v0.11.15/Codex-Monitor-macOS-arm64-v0.11.15.dmg) | [macOS 0.11.15](https://github.com/wwzwangwz/codex-monitor-public/releases/tag/macos-v0.11.15) |
+| Intel Mac | [Codex-Monitor-macOS-x64-v0.11.15.dmg](https://github.com/wwzwangwz/codex-monitor-public/releases/download/macos-v0.11.15/Codex-Monitor-macOS-x64-v0.11.15.dmg) | [macOS 0.11.15](https://github.com/wwzwangwz/codex-monitor-public/releases/tag/macos-v0.11.15) |
+| Windows x64 | [Codex-Monitor-Windows-x64-Setup-v0.8.10.exe](https://github.com/wwzwangwz/codex-monitor-public/releases/download/windows-v0.8.10/Codex-Monitor-Windows-x64-Setup-v0.8.10.exe) | [Windows 0.8.10](https://github.com/wwzwangwz/codex-monitor-public/releases/tag/windows-v0.8.10) |
+
+所有历史版本、备用 ZIP/Portable 文件、中文日志与 SHA-256 校验文件见 [Releases](https://github.com/wwzwangwz/codex-monitor-public/releases)。
+
+Android 支持应用内检查更新和原位安装，签名不变时会保留配对、防休眠和其他设置。macOS 与 Windows 当前没有商业代码签名，因此暂标记为 Pre-release：Mac 首次打开可能需要按住 Control 点击并选择“打开”，Windows 可能需要在 SmartScreen 中选择“更多信息 → 仍要运行”。各平台只有通过对应真实设备、签名和完整功能验收后才会标记为 Stable。
 
 ## 本地开发
 

@@ -4,9 +4,56 @@
 
 ## 待发布
 
-- macOS：等待固定 Developer ID 签名、原位更新和权限继承完成真实设备验收。
-- Windows：等待 `windows` 分支在真实 Windows 环境重新构建并完成通信、Goal 和图片链路验收。
+- macOS：0.11.15 预发布后，仍需固定 Developer ID、Apple 公证、原位更新和权限继承验收，才能升级为 Stable。
+- Windows：0.8.10 预发布后，仍需 Windows 代码签名与独立物理 Windows 的通信、Goal 和图片链路验收，才能升级为 Stable。
 - iOS：仍在开发中，尚无 App Store、TestFlight 或 IPA 发布。
+
+## macOS 0.11.15（Pre-release）— 2026-07-27
+
+### 发布文件
+
+- Apple Silicon：DMG 一键安装包与备用 ZIP。
+- Intel Mac：DMG 一键安装包与备用 ZIP。
+- 发布页：[macos-v0.11.15](https://github.com/wwzwangwz/codex-monitor-public/releases/tag/macos-v0.11.15)
+
+### 验证
+
+- Desktop 测试 111/111 通过，Relay 测试 15/15 通过。
+- 生产依赖审计为 0 个已知漏洞。
+- 两种架构的 DMG/ZIP 完整性、包标识、版本、处理器架构、内部源码一致性、内置 Android 更新包和隐私扫描均通过。
+- 当前只有 ad-hoc 签名，没有 Developer ID、Team ID 或 Apple 公证，因此保持 Pre-release，不冒充 Stable。
+
+### 文件校验
+
+```text
+b499825d38e0b791bc5844e37791eb22909f7dd233954e3e26896e13bcd910e8  Codex-Monitor-macOS-arm64-v0.11.15.dmg
+f87921a2d36e743c36e5782c5fa0cf48e0c710a52c8db8c43e27c148563dedba  Codex-Monitor-macOS-arm64-v0.11.15.zip
+c16f69d33655d33e1bb6620cdd792df2a93c3b321ead6254a873130800ded3f4  Codex-Monitor-macOS-x64-v0.11.15.dmg
+8fbebd713fce51879e12c61a664ca11273c4f6864a8e22ce472e1e1fddea53ce  Codex-Monitor-macOS-x64-v0.11.15.zip
+```
+
+## Windows 0.8.10（Pre-release）— 2026-07-27
+
+### 发布文件
+
+- Windows x64 Setup 一键安装包。
+- Windows x64 Portable 免安装备用版本。
+- 发布页：[windows-v0.8.10](https://github.com/wwzwangwz/codex-monitor-public/releases/tag/windows-v0.8.10)
+
+### 验证
+
+- 对应构建提交为 `88ace8e2b5f0a131139ec0347c49864c45147f9e`，构建记录为 [GitHub Actions run 30210544106](https://github.com/wwzwangwz/codex-monitor-public/actions/runs/30210544106)。
+- Setup 与 Portable 内部应用载荷一致。
+- 安装包源码与对应公开提交一致，仅存在 Windows 标准 CRLF 换行差异。
+- 已通过已知设备信息、局域网地址、配对令牌和常见密钥扫描。
+- 尚无 Windows 代码签名与独立物理 Windows 的完整功能验收，因此保持 Pre-release。
+
+### 文件校验
+
+```text
+6307f9b9f1cbdb68ef8678abb8c8c2d9695727c86f6e185096c9fcd8bffcc0b4  Codex-Monitor-Windows-x64-Portable-v0.8.10.exe
+1e3b100544c635d13f9ede9562b01634e71fd28a1d1b029cb78c7b193c2a989b  Codex-Monitor-Windows-x64-Setup-v0.8.10.exe
+```
 
 ## 公共开源基线 — 2026-07-27
 
