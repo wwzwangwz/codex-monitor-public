@@ -1,5 +1,8 @@
 # Codex Monitor for Windows
 
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE)
+[![GitHub Release](https://img.shields.io/github/v/release/wwzwangwz/codex-monitor-public?include_prereleases)](https://github.com/wwzwangwz/codex-monitor-public/releases)
+
 这是 Codex Monitor 的 Windows 独立开发分支，包含 Windows 桌面伴侣、Codex 原生 Steer/Queue 适配、Goal 控制、局域网/可选 Relay、安装包和更新验证源码。
 
 ## 当前状态
@@ -18,7 +21,7 @@ npm test
 npx electron-builder --win nsis portable --publish never
 ```
 
-推送到 `windows` 分支后，`.github/workflows/windows-build.yml` 会在 GitHub 的 Windows runner 上测试并生成短期构建 Artifact。只有通过物理 Windows 验收、签名和隐私门禁的版本才可复制到 GitHub Release 并标记 Stable。
+Windows 安装包必须从公开 `windows` 分支在 Windows 环境重新构建。只有通过自动化测试、物理 Windows 验收、签名和隐私门禁的版本，才可上传到 GitHub Release 并标记 Stable。详细规则见 [docs/RELEASE-PROCESS.md](docs/RELEASE-PROCESS.md)，版本记录见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 安全边界
 
@@ -30,6 +33,8 @@ npx electron-builder --win nsis portable --publish never
 
 ## 许可证与版权
 
-Copyright © 2026 wwzwangwz. All rights reserved.
+Copyright © 2026 Wenzhen Wang（GitHub：wwzwangwz）。
 
-本分支与主分支相同，采用 [PolyForm Noncommercial License 1.0.0](LICENSE)，属于源码可见项目。未经版权所有者事先书面许可，禁止商业使用、销售、转卖、付费部署、付费集成或商业 SaaS 使用。自愿赞助不等于商业授权。
+本分支与主分支相同，采用 [GNU Affero General Public License v3.0 only](LICENSE)，SPDX 标识为 `AGPL-3.0-only`，属于 OSI 正式认可的开源软件。
+
+允许商业使用、收费部署、销售副本和提供收费服务，但必须保留许可证、版权和 [NOTICE](NOTICE)，明确标注修改，并按照 AGPL 提供分发版本或修改后网络服务的对应源码。中文说明见 [docs/LICENSE-zh-CN.md](docs/LICENSE-zh-CN.md)，标准引用信息见 [CITATION.cff](CITATION.cff)。

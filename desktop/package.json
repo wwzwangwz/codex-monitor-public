@@ -2,7 +2,7 @@
   "name": "codex-monitor-desktop",
   "version": "0.8.10",
   "description": "Codex session monitor desktop companion",
-  "license": "SEE LICENSE IN ../LICENSE",
+  "license": "AGPL-3.0-only",
   "main": "src/main.js",
   "scripts": {
     "start": "electron .",

@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "如果使用或引用 Codex Monitor，请引用本文件中的项目信息，并保留 NOTICE。"
+title: "Codex Monitor"
+type: software
+authors:
+  - family-names: "Wang"
+    given-names: "Wenzhen"
+    alias: "wwzwangwz"
+repository-code: "https://github.com/wwzwangwz/codex-monitor-public"
+url: "https://github.com/wwzwangwz/codex-monitor-public"
+license: "AGPL-3.0-only"
+keywords:
+  - Codex
+  - Android
+  - macOS
+  - Windows
+  - iOS
+  - session monitoring

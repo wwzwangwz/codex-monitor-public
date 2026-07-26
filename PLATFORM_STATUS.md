@@ -33,4 +33,4 @@
 1. Stable Release 必须通过自动化测试、隐私/密钥扫描、签名校验和对应真实设备验收。
 2. 未通过任一门禁的构建只能标记为 Pre-release。
 3. Android APK、Windows 安装包、macOS DMG/ZIP 和演示视频只作为 Release 附件，不把逐版本二进制写入 Git 历史。桌面构建所需的单个当前 Android 更新资源除外。
-4. 所有 Release 必须附带版权与禁止商用、转卖声明。
+4. 所有 Release 必须附带 AGPL-3.0-only、`NOTICE`、对应源码链接和安装文件 SHA-256。
